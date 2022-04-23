@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<style>
+h1 {
+  font-size: 150%;
+}
+</style>
+<form method="POST">
+  <h1 align="center">Login</h1>
+
+
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control has-icons-left has-icons-right">
+      <input class="input" id="email" name="email" type="email" placeholder="Email input" value="">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Enter password</label>
+    <div class="control">
+      <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Enter password"
+    />
+    </div>
+  </div>
+
+  <br>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link">Submit</button>
+    </div>
+    <div class="control">
+      <a href="/sign-up">
+      <button class="button is-link is-light">Cancel</button>
+      </a>
+    </div>
+  </div>
+</form>
+{% endblock %}

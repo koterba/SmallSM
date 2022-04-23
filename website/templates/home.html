@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<style>
+h1 {
+  font-size: 150%;
+}
+</style>
+<br>
+<div class="columns">
+  <div class="column is-8">
+    <h1 align="center">All posts</h1>
+    <br>
+
+    {% for note in notes %}
+    <article class="message">
+      <div class="message-header">
+        <p>{{ note.name }}</p>
+        {% if user.id == note.user_id %}
+        <button class="delete" aria-label="delete" onClick="deleteNote({{ note.id }})"></button>
+        {% endif %}
+      </div>
+      <div class="message-body">
+        {{ note.data }}
+      </div>
+    </article>
+    {% endfor %}
+    
+  </div>
+  <div class="column">
+
+  <h1 align="center">Create</h1>
+  <br>
+
+  <form method="POST">
+    <textarea name="note" id="note" class="textarea is-link" placeholder="What's on your mind?"></textarea>
+    <br/>
+    <div align="center">
+      <button class="button is-link">Post</button>
+    </div>
+  </form>
+  </div>
+</div>
+{% endblock %}
