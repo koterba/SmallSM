@@ -1,5 +1,5 @@
 # SmallSM
-A tiny flask social media
+A tiny social media made using Flask
 
 <br>
 
